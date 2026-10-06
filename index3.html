@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiment 3 | Dynamic To-Do List</title>
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Dynamic To-Do List Application</h1>
+    <p>Add, delete and mark tasks as complete using JavaScript and the DOM manipulation.</p>
+
+    <form id="taskForm">
+      <label for="taskInput">New task</label>
+      <div class="input-row">
+        <input id="taskInput" type="text" placeholder="Enter a task..." required>
+        <button type="submit">Add Task</button>
+      </div>
+    </form>
+
+    <p id="taskCount">0 tasks</p>
+    <ul id="taskList" aria-live="polite"></ul>
+  </main>
+  <script src="script3.js"></script>
+</body>
+</html>

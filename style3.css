@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+
+    /* Animated gradient background */
+    background: linear-gradient(
+        135deg,
+        #eecbec,
+        #eeaaeb,
+        #ba89d7,
+        #e56e9a
+    );
+
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+
+    color: #222;
+    overflow-x: hidden;
+}
+
+/* Floating circle 1 */
+body::before {
+    content: "";
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+
+    top: 10%;
+    left: 5%;
+
+    animation: floatOne 8s ease-in-out infinite;
+
+    z-index: 0;
+}
+
+/* Floating circle 2 */
+body::after {
+    content: "";
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.20);
+
+    bottom: 10%;
+    right: 5%;
+
+    animation: floatTwo 10s ease-in-out infinite;
+
+    z-index: 0;
+}
+
+/* Animated gradient */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Floating animation 1 */
+@keyframes floatOne {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(80px, -50px);
+    }
+}
+
+/* Floating animation 2 */
+@keyframes floatTwo {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-70px, 60px);
+    }
+}
+
+
+/* Main To-Do application */
+.app {
+    position: relative;
+    z-index: 1;
+
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 30px;
+
+    background: #fff;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 18px #0001;
+}
+
+
+/* Input row */
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    font: inherit;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+button {
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Task list */
+#taskList {
+    list-style: none;
+    padding: 0;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 12px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.completed span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.delete-btn {
+    background: #eee;
+}
+
+
+/* Mobile layout */
+@media (max-width: 550px) {
+    .input-row {
+        flex-direction: column;
+    }
+
+    .task {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
