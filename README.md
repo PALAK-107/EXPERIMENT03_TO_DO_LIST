@@ -4,5 +4,8 @@ Create a dynamic to-do list application where users can add, delete, and mark ta
 # PROJECT TREE
 - README.md
 - index3.html
+- script3.js
+- style3.css
+  
 
 
